@@ -19,7 +19,7 @@ from telegram.ext import (
 )
 
 from config import TELEGRAM_BOT_TOKEN, TMP_DIR
-from ocr import extract_text, init_client
+from ocr import extract_text, warmup_client
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -162,7 +162,7 @@ async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main():
     """Start the bot."""
     logger.info("Connecting to OCR service...")
-    init_client()
+    warmup_client()
     logger.info("Connected. Starting bot...")
 
     app = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
