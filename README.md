@@ -38,10 +38,15 @@ source .venv/bin/activate  # Linux/macOS
 pip install -r requirements.txt
 ```
 
-Edit the `.env` file and paste your bot token:
+Edit the `.env` file and add your tokens:
 
 ```
 TELEGRAM_BOT_TOKEN=your-actual-token-from-botfather
+
+# Optional but recommended -- gives a much higher ZeroGPU quota.
+# Create a free token at https://huggingface.co/settings/tokens
+# with only the "Make calls to Inference Providers" permission enabled.
+HF_TOKEN=hf_your-token-here
 ```
 
 ### 3. Run the bot
